@@ -13,7 +13,7 @@ class Aluno {
     }
 
     passouDeAno() {
-        return this._nota >= 5;
+        return this._nota >= 7;
     }
 
     estuda() {
@@ -44,6 +44,6 @@ class Aluno {
     }
 
     toString() {
-        return 'Aluno ' + this._id + ' - nome: ' + this._nome + ' - nota: ' + this._nota + '</br>';
+        return 'Aluno ' + this._id + ' - nome: ' + ' - nível : ' + this._nivelConhecimento + ' - nota: ' + this._nota + '</br>';
     }
 }

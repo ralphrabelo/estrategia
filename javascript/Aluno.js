@@ -1,13 +1,17 @@
 class Aluno{
 
+    //private não é aceito em javacript. somente typescript
+    //_ (underscore) vem para ajudar na criação de atributos "privados"
     constructor(id, nome, email, nota){
-        this._id = id;
+        this._id = id; 
         this._nome = nome;
         this._email = email;
         this._nota = nota;
+        this._nivelConhecimento = 0;
         this._cursos = [];
     }
 
+    //get e não getId é a forma para acessar atribtutos definida no es6
     get id(){
         return this._id;
     }
@@ -27,12 +31,17 @@ class Aluno{
     get cursos(){
         return this._cursos;
     }
-
+    set nivelConhecimento(nivelConhecimento){
+        this._nivelConhecimento = nivelConhecimento;
+    }
+    get nivelConhecimento(){
+        return this._nivelConhecimento;
+    }
     contratar(curso){
-        this._cursos.push(curso);
+        this.cursos.push(curso);
     }
     estudar(){
-        this.nivelDeConhecimento++;
+        this.nivelConhecimento++;
     }
 
     get totalGasto(){
@@ -40,7 +49,7 @@ class Aluno{
     }
 
     toString(){
-        return 'ID: '+ this._id+ ' Nome: '+ this._nome + ' - Cursos: '+ this._cursos+ '<br/>';
+        return 'ID: '+ this.id+ ' Nome: '+ this.nome + ' Nota: ' + this.nota + ' Nível de Conhecimento: ' + this.nivelConhecimento + ' Email: ' + this.email + ' - Cursos: '+ this.cursos+ '<br/>';
     }
 
 }
